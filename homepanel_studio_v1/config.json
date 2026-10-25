@@ -1,0 +1,41 @@
+{
+  "name": "HomePanel Studio v1",
+  "slug": "homepanel_studio_v1",
+  "description": "Premium Home Assistant dashboards. Pro access is perpetual for major version 1.",
+  "version": "1.0.0-beta.8",
+  "stage": "experimental",
+  "arch": [
+    "amd64"
+  ],
+  "startup": "application",
+  "boot": "auto",
+  "init": true,
+  "timeout": 270,
+  "image": "ghcr.io/aceclaw519/homepanel-studio-v1-{arch}",
+  "url": "https://homepanelstudio.com",
+  "webui": "http://[HOST]:[PORT:3000]",
+  "ports": {
+    "3000/tcp": 3008
+  },
+  "ports_description": {
+    "3000/tcp": "HPS browser, tablet and Android access (HPS login required)"
+  },
+  "homeassistant_api": true,
+  "hassio_api": false,
+  "auth_api": false,
+  "docker_api": false,
+  "host_network": false,
+  "ingress": false,
+  "backup": "cold",
+  "options": {
+    "admin_recovery_request": ""
+  },
+  "schema": {
+    "admin_recovery_request": "str?"
+  },
+  "environment": {
+    "HPS_HA_SUPERVISOR_ENABLED": "1",
+    "HPS_LICENSE_LIVE_ENABLED": "1",
+    "HPS_LICENSE_LIVE_ISSUER_ID": "homepanel-studio-prod-v1-20261017"
+  }
+}

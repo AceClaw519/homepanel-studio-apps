@@ -1,0 +1,11 @@
+{
+  "configuration": {
+    "admin_recovery_request": {
+      "name": "Admin recovery request",
+      "description": "Normally leave blank. To reset only the HPS login, enter a new unique value (letters, numbers, dots, hyphens or underscores; up to 64 characters), save and restart. Create a new HPS login, then clear this field. Dashboards, uploads, connection and license remain."
+    }
+  },
+  "network": {
+    "3000/tcp": "HPS browser, tablet and Android access. HPS login required."
+  }
+}
