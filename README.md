@@ -2,7 +2,7 @@
 
 Home Assistant OS installation repository for **HomePanel Studio v1**.
 
-Experimental beta: the amd64 image passed isolated container acceptance. Real HAOS hardware acceptance is in progress; ARM64 is not offered yet. Back up your installation before updates.
+Experimental beta for amd64 and 64-bit ARM (aarch64). Both images pass isolated container acceptance; ARM64 is newly available for Raspberry Pi hardware testing, not a completed hardware/performance certification. 32-bit ARM is not supported. Back up your installation before updates.
 
 Add this repository URL in Home Assistant's Apps store:
 

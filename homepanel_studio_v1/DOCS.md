@@ -2,7 +2,7 @@
 
 ## Install and open
 
-Requires Home Assistant OS with Supervisor and an amd64 host. Real HAOS hardware acceptance of this beta is still in progress. Add `https://github.com/AceClaw519/homepanel-studio-apps` in the Apps store, install **HomePanel Studio v1**, start it, and choose **Open Web UI**.
+Requires Home Assistant OS with Supervisor and an amd64 or 64-bit ARM (aarch64) host. ARM64 is newly available for real Raspberry Pi hardware testing; native performance and Supervisor backup/restore acceptance remain in progress. 32-bit ARM is not supported. Add `https://github.com/AceClaw519/homepanel-studio-apps` in the Apps store, install **HomePanel Studio v1**, start it, and choose **Open Web UI**.
 
 The first beta opens directly at your HA host on port **3008** (configurable in the app Network options). Create a separate HPS administrator login. The connection to this Home Assistant instance is automatic; no long-lived HA token or HA URL is needed. HPS controls HA through the server-side Supervisor Core proxy. This grants Core administrator-equivalent access; the Supervisor credential never belongs in a browser or dashboard export.
 

@@ -5,7 +5,8 @@
 - Updated widget system presets and saved-control compatibility corrections.
 - Improved accessibility, Camera modal and tap behavior, Media controls, State dismissal and Weather forecast date agreement.
 - Retains major-v1 data, installation identity, key-only licensing and Supervisor-managed Home Assistant connection.
-- Same-major update test release; amd64 only. No automatic saved-widget appearance migration.
+- Same-major update test release. No automatic saved-widget appearance migration.
+- ARM64 (aarch64) image added October 29 from the same 1.0.1 application source for Raspberry Pi hardware testing. The existing amd64 image is unchanged. 32-bit ARM is not supported.
 
 ## 1.0.0-beta.8 — experimental beta
 
