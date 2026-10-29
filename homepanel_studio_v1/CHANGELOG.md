@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.1
+
+- Updated widget system presets and saved-control compatibility corrections.
+- Improved accessibility, Camera modal and tap behavior, Media controls, State dismissal and Weather forecast date agreement.
+- Retains major-v1 data, installation identity, key-only licensing and Supervisor-managed Home Assistant connection.
+- Same-major update test release; amd64 only. No automatic saved-widget appearance migration.
+
 ## 1.0.0-beta.8 — experimental beta
 
 - Supervisor-managed installation with persistent data and prebuilt amd64 image.
