@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.2
+
+- Add Picture widgets with a separate image library, HA image entities, framing controls and fullscreen viewing.
+- Add the official cyan HomePanel Studio icon and logo to Home Assistant's app listing.
+- Improve camera presets, motion defaults, overlay activity handling and editor selection/resizing.
+- Refine manual editor tabs, grid appearance/history and shared surface controls.
+- Preserve existing saved dashboards, v1 licensing and installation data.
+
 ## 1.0.1
 
 - Updated widget system presets and saved-control compatibility corrections.
