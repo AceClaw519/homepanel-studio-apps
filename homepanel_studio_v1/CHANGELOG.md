@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.3
+
+- Add dashboard screensaver modes, conditional widget visibility and clearer editor navigation/recovery.
+- Expand analog and digital clock, thermostat and weather system presets; refine weather details and Meteocons.
+- Improve Picture source selection, camera motion-device matching and low-frame-rate camera viewing.
+- Polish quick-setting icon styles, layered editor dismissal and Panel placement guidance.
+- Preserve existing dashboards, installation data and major-v1 licensing.
+
 ## 1.0.2
 
 - Add Picture widgets with a separate image library, HA image entities, framing controls and fullscreen viewing.
