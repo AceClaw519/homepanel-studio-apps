@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.4
+
+- Refine Settings layout and active-license management.
+- Add threshold icon colors to Gauge/Progress Bar and percentage-based Weather sizing.
+- Align State widget identity controls and group camera behavior settings in Content.
+- Add independent camera name, timestamp and status positions; separate captions from the gradient.
+- Clarify static camera glow and fix its tooltip/switch styling.
+- Fix a dropped first click after returning from a light settings flow to the dashboard library.
+- Preserve existing dashboards, installation data and major-v1 licensing.
+
 ## 1.0.3
 
 - Add dashboard screensaver modes, conditional widget visibility and clearer editor navigation/recovery.
