@@ -2,7 +2,28 @@
 
 ## Install and open
 
-Requires Home Assistant OS with Supervisor and an amd64 or 64-bit ARM (aarch64) host. ARM64 is newly available for real Raspberry Pi hardware testing; native performance and Supervisor backup/restore acceptance remain in progress. 32-bit ARM is not supported. Add `https://github.com/AceClaw519/homepanel-studio-apps` in the Apps store, install **HomePanel Studio v1**, start it, and choose **Open Web UI**.
+Requires **Home Assistant OS with Supervisor** on an **amd64** or **aarch64** host.
+For Raspberry Pi, install **64-bit Home Assistant OS**; a 64-bit processor running
+a 32-bit OS is not enough. Initial mini PC/Pi 4 installations have been confirmed
+by the developer; wider hardware/performance and actual Supervisor backup/restore
+acceptance are ongoing. Home Assistant Container has no app store and needs the
+separate standalone distribution, not this Supervisor image. This is not HACS.
+
+1. Open **Settings → Apps → Install app** (older HA: **Settings → Add-ons → Add-on Store**).
+2. Choose **⋮ → Repositories**, add the URL below, then close the dialog:
+
+   ```text
+   https://github.com/AceClaw519/homepanel-studio-apps
+   ```
+
+3. Refresh the store, find **HomePanel Studio v1** and choose **Install**.
+   The matching amd64/aarch64 build is selected automatically.
+4. Leave **Admin recovery request** (or **Reset HPS login** in newer wording)
+   blank. This is a forgotten-login reset trigger, not an initial-password field.
+5. Choose **Start**, then **Open Web UI**. Create your HPS administrator login
+   in that web page; there is no default login. Enable **Start on boot** if desired.
+6. Make a dashboard and save it. Other browsers/tablets use the same HPS host
+   address and HPS login. The Android companion is a viewer, not another server.
 
 The first beta opens directly at your HA host on port **3008** (configurable in the app Network options). Create a separate HPS administrator login. The connection to this Home Assistant instance is automatic; no long-lived HA token or HA URL is needed. HPS controls HA through the server-side Supervisor Core proxy. This grants Core administrator-equivalent access; the Supervisor credential never belongs in a browser or dashboard export.
 
@@ -20,7 +41,9 @@ Changing this mapping does not change your server-side dashboards, login account
 
 All installation state lives in the app's persistent `/data`: dashboards, uploaded media, settings, login credentials, installation ID and license state. Restarting or updating the app must retain it. Uninstalling and deleting app data is not an update.
 
-Before updating, create an app backup and retain a downloadable/off-host copy with its backup encryption/recovery information. This app requests **cold** backups: Supervisor stops it while capturing data so SQLite and its WAL are not copied independently while changing. Confirm that the backup completed. Record the app version. Do not rely on only one automatically retained update backup.
+To update, refresh the Apps store, open **HomePanel Studio v1**, read the changelog and use **Update** when offered. No Git checkout, Docker command or reinstall is required. Updating the repository alone does not update the installed app.
+
+Before updating, save open editor changes, create an app backup and retain a downloadable/off-host copy with its backup encryption/recovery information. This app requests **cold** backups: Supervisor stops it while capturing data so SQLite and its WAL are not copied independently while changing. Confirm that the backup completed. Record the app version. Do not rely on only one automatically retained update backup.
 
 To roll back an incompatible change, stop the app and restore the **matching pre-update app backup including its previous version and data** using HA backup restore. Then start it and verify dashboards, backgrounds, login, HA connection and license. Do not substitute only an older container image against newer-format data. There is no promised arbitrary previous-version selector; verify the retained backup offers the expected app version before restoring. Restoring replaces newer changes with the older snapshot. Keep old released images available; contact HPS support if HA cannot retrieve a matching image.
 
@@ -28,7 +51,26 @@ This v1 app does not silently update to a future paid v2 app. Perpetual purchase
 
 ## Forgotten HPS login
 
-In Home Assistant, open this app's **Configuration**, set **Admin recovery request** to a new unique value (letters, digits, hyphens; for example a descriptive label with today's date), save, then restart the app. Open HPS and create a replacement administrator login. Clear the request afterward. This resets HPS login/sessions only; it preserves dashboards, uploads, identity and license. Each value is consumed once before resetting; restarting with the same value does not reset the replacement login. If recovery fails, resolve the storage/startup error and use a new value. No host SSH or terminal is required.
+1. Open **Settings → Apps → HomePanel Studio v1 → Configuration** (older HA: Add-ons).
+2. In **Admin recovery request** (or **Reset HPS login** in newer wording), enter
+   a reset label such as `reset-1`—**not your new password**. Use a different label
+   next time, such as `reset-2`. Labels accept 1–64 letters, digits, dots, hyphens
+   or underscores, with no spaces.
+3. **Save**, then **Restart** the HPS app, not Home Assistant itself. Saving alone
+   does not reset the login.
+4. Choose **Open Web UI** or refresh the existing HPS page. Create a replacement
+   administrator username and password on the setup screen. The welcome screen
+   is expected after reset; it does not mean your dashboards were deleted.
+5. Return to Configuration, clear the recovery field and **Save**. Leave it blank
+   during normal use. Sign in again on your other viewing devices.
+
+This removes only the HPS administrator login and sessions. It preserves dashboards,
+uploaded media, the HA connection, installation identity and license. Your Home
+Assistant account is unchanged. No SSH, email recovery, uninstall or data deletion
+is needed. The last label is recorded before reset; restarting with that label
+will not reset the replacement login again. Clearing the field does not make that
+last label reusable. If reset fails, inspect the app Log for a storage/startup
+error, resolve it, then **Save and Restart with a different label** to retry.
 
 ## Feedback
 
