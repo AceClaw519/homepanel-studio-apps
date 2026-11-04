@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.5
+
+- Close directly opened fullscreen cameras in one dismissal without revealing a skipped popup.
+- Keep the full live camera frame visible on ultrawide and phone displays.
+- Quiet dashboard camera motion alerts and visual effects while watching a live camera; fresh events resume after closing.
+- Remove the dashboard context menu that interfered with widget hold gestures.
+- Clarify installation and login-recovery documentation; preserve existing dashboards and v1 licensing.
+
 ## 1.0.4
 
 - Refine Settings layout and active-license management.

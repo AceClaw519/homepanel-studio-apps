@@ -51,26 +51,19 @@ This v1 app does not silently update to a future paid v2 app. Perpetual purchase
 
 ## Forgotten HPS login
 
-1. Open **Settings → Apps → HomePanel Studio v1 → Configuration** (older HA: Add-ons).
-2. In **Admin recovery request** (or **Reset HPS login** in newer wording), enter
-   a reset label such as `reset-1`—**not your new password**. Use a different label
-   next time, such as `reset-2`. Labels accept 1–64 letters, digits, dots, hyphens
-   or underscores, with no spaces.
-3. **Save**, then **Restart** the HPS app, not Home Assistant itself. Saving alone
-   does not reset the login.
-4. Choose **Open Web UI** or refresh the existing HPS page. Create a replacement
-   administrator username and password on the setup screen. The welcome screen
-   is expected after reset; it does not mean your dashboards were deleted.
-5. Return to Configuration, clear the recovery field and **Save**. Leave it blank
-   during normal use. Sign in again on your other viewing devices.
+The **Options** panel is part of Home Assistant's app configuration. Its **Reset HPS login** field is only for recovering a forgotten HPS username or password. **Leave it blank during normal use.** It is not a place to set or store your new password. The separate **Network** panel controls the browser port, not password recovery.
 
-This removes only the HPS administrator login and sessions. It preserves dashboards,
-uploaded media, the HA connection, installation identity and license. Your Home
-Assistant account is unchanged. No SSH, email recovery, uninstall or data deletion
-is needed. The last label is recorded before reset; restarting with that label
-will not reset the replacement login again. Clearing the field does not make that
-last label reusable. If reset fails, inspect the app Log for a storage/startup
-error, resolve it, then **Save and Restart with a different label** to retry.
+1. In Home Assistant, open **Settings → Apps → HomePanel Studio v1 → Configuration**. Older Home Assistant versions may call Apps **Add-ons**.
+2. In **Reset HPS login** (called **Admin recovery request** in older HPS versions), enter a reset label such as `reset-1`. **Do not enter your password.** Use a different label for each reset, such as `reset-2` next time. Labels may contain 1–64 letters, numbers, dots, hyphens or underscores, with no spaces.
+3. Choose **Save**, then **Restart** the HomePanel Studio app—not Home Assistant itself. Saving the field alone does not reset the login.
+4. Choose **Open Web UI**. If an HPS page is already open, refresh it. HPS shows the setup screen; create a new administrator username and password there. The welcome/first-time-setup screen is expected after a login reset; it does not mean your dashboards were deleted.
+5. Return to the app's **Configuration**, clear **Reset HPS login** and choose **Save**. Leave the field blank until you need another reset.
+
+**What changes:** the old HPS administrator login is removed and all existing HPS sessions are signed out. Sign in again on your other browsers/tablets using the new login.
+
+**What stays:** dashboards, uploaded media, the Home Assistant connection, installation identity and Pro/license state. Your Home Assistant username and password are not changed. No email recovery, SSH, terminal commands, uninstall or data deletion is needed.
+
+**If the reset does not work:** check the app's **Log** for a storage/startup error. The last reset label is recorded before the reset runs, so a restart with the same label will not reset the replacement login again. Clearing the field does not make that last label reusable. After resolving an error, enter a different label, **Save** and **Restart** to retry. Do not uninstall the app or delete its data to recover a password.
 
 ## Feedback
 

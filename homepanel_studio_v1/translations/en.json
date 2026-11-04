@@ -1,11 +1,11 @@
 {
   "configuration": {
     "admin_recovery_request": {
-      "name": "Admin recovery request",
-      "description": "Normally leave blank. To reset only the HPS login, enter a new unique value (letters, numbers, dots, hyphens or underscores; up to 64 characters), save and restart. Create a new HPS login, then clear this field. Dashboards, uploads, connection and license remain."
+      "name": "Reset HPS login",
+      "description": "Leave blank for normal use. Forgotten your HPS password? 1) Enter a reset label such as reset-1 (NOT your new password; no spaces). Use a different label each time, e.g. reset-2 next time. 2) Save, then restart this app. 3) Choose Open Web UI and create a new username and password. 4) Clear this field and Save. This signs out all HPS sessions but keeps dashboards, uploads, the Home Assistant connection and Pro access. Your Home Assistant login is not changed."
     }
   },
   "network": {
-    "3000/tcp": "HPS browser, tablet and Android access. HPS login required."
+    "3000/tcp": "Port used to open HPS in a browser, tablet or Android app. HPS login required. Default: 3008. This is separate from password recovery; normally leave it unchanged."
   }
 }
