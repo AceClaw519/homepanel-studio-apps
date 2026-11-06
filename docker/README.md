@@ -1,9 +1,9 @@
 # HomePanel Studio — Docker installation and recovery
 
-**Standalone Docker early access — version 1.0.5.** Use the public, source-free
-[installer bundle and checksum](https://github.com/AceClaw519/homepanel-studio-apps/releases/tag/docker-v1.0.5).
+**Standalone Docker early access — version 1.0.6.** Use the public, source-free
+[installer bundle and checksum](https://github.com/AceClaw519/homepanel-studio-apps/releases/tag/docker-v1.0.6).
 The bundle pins the public multi-platform image
-`ghcr.io/aceclaw519/homepanel-studio-docker-v1@sha256:f9d3331ef1331fcd02baa7b2602d9fc9fb8da75d4792b04699a0689e30e085b5`.
+`ghcr.io/aceclaw519/homepanel-studio-docker-v1@sha256:03b302ffed581a2c420ec5bed858bb9762f700e84863cf992e253725ab159a06`.
 No GitHub login, registry credentials, application source, Git or Node.js is needed.
 Docker selects Linux amd64 or arm64 automatically. The bundle includes Linux and native Windows PowerShell maintenance helpers.
 
@@ -19,7 +19,7 @@ This host-side helper targets Linux with Docker Engine, Docker Compose supportin
 `up --wait --wait-timeout`, POSIX `sh`, `tar` and standard shell utilities. It does
 not require Git, Node, npm, or the application source. Docker must already work
 for your user; Docker installation and host boot configuration are separate.
-Version 1.0.5 provides one public, versioned Docker index for Linux amd64 and arm64;
+Version 1.0.6 provides one public, versioned Docker index for Linux amd64 and arm64;
 Docker selects the host platform automatically. ARM64 image/module/upgrade tests use emulation;
 native ARM/NAS performance and native Windows/Docker Desktop acceptance remain
 separate device-specific checks.
@@ -32,14 +32,14 @@ that Docker, WSL or your host starts. Test your actual host after a reboot.
 
 ## Install
 
-1. Download `hcp-1.0.5-install.tar.gz` and its adjacent `.sha256` file from the
+1. Download `hcp-1.0.6-install.tar.gz` and its adjacent `.sha256` file from the
    release above into a permanent local directory. With Docker already running,
    verify and extract:
 
    ```sh
-   sha256sum -c hcp-1.0.5-install.tar.gz.sha256
-   tar -xzf hcp-1.0.5-install.tar.gz
-   cd hcp-1.0.5-install
+   sha256sum -c hcp-1.0.6-install.tar.gz.sha256
+   tar -xzf hcp-1.0.6-install.tar.gz
+   cd hcp-1.0.6-install
    cp config.env.example .env
    ```
 
@@ -110,10 +110,10 @@ repository digest/release bundle too. Do not prune retained images prematurely.
 Read the release notes first, save current editor changes, then run:
 
 ```sh
-sh hcp.sh update ghcr.io/aceclaw519/homepanel-studio-docker-v1@sha256:f9d3331ef1331fcd02baa7b2602d9fc9fb8da75d4792b04699a0689e30e085b5
+sh hcp.sh update ghcr.io/aceclaw519/homepanel-studio-docker-v1@sha256:03b302ffed581a2c420ec5bed858bb9762f700e84863cf992e253725ab159a06
 ```
 
-This is the exact reference for **1.0.5**. If you already run that image, the
+This is the exact reference for **1.0.6**. If you already run that image, the
 helper reports no change. For a later release, use its published immutable
 reference instead; do not edit `.env` to force an update. The helper downloads before downtime,
 checks HPS product major 1, pins the exact old image, creates a stopped-data
@@ -190,9 +190,9 @@ application source is required to run this PowerShell helper. Do not install a
 second Docker engine into WSL as part of these customer instructions.
 
 1. Start Docker Desktop, complete first-run setup and wait for **Engine running**.
-2. Verify the published SHA256 with `Get-FileHash .\hcp-1.0.5-install.tar.gz -Algorithm SHA256`
+2. Verify the published SHA256 with `Get-FileHash .\hcp-1.0.6-install.tar.gz -Algorithm SHA256`
    and compare it with the publisher's checksum. Extract the archive (for example
-   `tar -xzf .\hcp-1.0.5-install.tar.gz`) into a permanent Windows directory. Copy
+   `tar -xzf .\hcp-1.0.6-install.tar.gz`) into a permanent Windows directory. Copy
    `config.env.example` to `.env`, choose a stable project name and available port.
 3. Open PowerShell in that directory and run:
 
@@ -212,7 +212,7 @@ PowerShell commands below use `powershell.exe -NoProfile -ExecutionPolicy Bypass
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\hcp.ps1 status
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\hcp.ps1 backup
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\hcp.ps1 update -Image ghcr.io/aceclaw519/homepanel-studio-docker-v1@sha256:f9d3331ef1331fcd02baa7b2602d9fc9fb8da75d4792b04699a0689e30e085b5
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\hcp.ps1 update -Image ghcr.io/aceclaw519/homepanel-studio-docker-v1@sha256:03b302ffed581a2c420ec5bed858bb9762f700e84863cf992e253725ab159a06
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\hcp.ps1 stop
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\hcp.ps1 start
 ```

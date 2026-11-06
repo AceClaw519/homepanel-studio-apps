@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.6
+
+- Add a versioned AI knowledge download under Settings → Help, with public-safe guidance and exact configuration vocabulary.
+- Unify widget destinations in an Add to… picker across the sidebar, right-click menu and Add dialog; reveal overlay destinations after completed placement.
+- Restore clear Container/Panel tips naming both the left-panel and right-click entry points.
+- Preserve light brightness when changing color or white tone.
+- Prevent native browser selection/drag from taking over canvas editing; polish assignment and footer controls.
+- Hide inactive camera hover controls in noninteractive editor previews.
+- Preserve existing dashboards, installation data and major-v1 licensing.
+
 ## 1.0.5
 
 - Close directly opened fullscreen cameras in one dismissal without revealing a skipped popup.
